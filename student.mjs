@@ -23,12 +23,6 @@ class Student {
         this.approvedCourse = approvedCourse;
         this.learningPaths = learningPaths
     }
-}
+};
 
-const mario2 = new Student({
-    name: 'Mario',
-    age: 26,
-    username: 'mariovelandiac',
-    twitter: 'mariovelandiac',
-    instagram: 'mariovelandiac'
-})
+export default Student
