@@ -1,10 +1,14 @@
 class Course {
     constructor({
         name,
-        classes = []
+        classes = [],
+        isFree = false,
+        lan = 'español'
     }) {
-        this._name = name,
-        this.classes = classes
+        this._name = name;
+        this.classes = classes;
+        this.isFree = isFree;
+        this.lan = lan;
     }
 
     get name() {

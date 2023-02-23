@@ -1,7 +1,10 @@
-import Class from './class.mjs'
-import Course from './course.mjs';
-import LearningPaths from './learningpaths.mjs';
-import Student from './student.mjs'
+  import Class from './class.js'
+import Course from './course.js';
+import LearningPaths from './learningpaths.js';
+import BasicStudent from './basicStudent.js'
+import FreeStudent from './freeStudent.js'
+import ExpertStudent from './expertStudent.js';
+import TeacherStudent from './teacherStundent.js'
 // Información de clases
 
 const introducción = new Class({
@@ -38,7 +41,8 @@ const cursoProgramBásica = new Course({
         introducción,
         proyecto,
         conclusiones
-    ]
+    ],
+    isFree: true,
 });
 
 const cursoHTML = new Course({
@@ -47,7 +51,8 @@ const cursoHTML = new Course({
         introducción,
         información,
         conclusiones
-    ]
+    ],
+    isFree: true
 });
 
 const cursoHTMLdefinitvo = new Course({
@@ -65,7 +70,8 @@ const cursoDataBusiness = new Course({
         introducción,
         proyecto,
         conclusiones
-    ]
+    ],
+    lan: 'english'
 });
 
 const cursoDataViz = new Course({
@@ -83,7 +89,8 @@ const cursoRealEngine = new Course({
         introducción,
         proyecto,
         conclusiones
-    ]
+    ],
+    lan: 'english'
 });
 
 const cursoUnity = new Course({
@@ -92,7 +99,8 @@ const cursoUnity = new Course({
         introducción,
         proyecto,
         conclusiones
-    ]
+    ],
+    lan: 'english'
 });
 
 // Información de Learning Paths
@@ -121,7 +129,7 @@ const escuelaVdj = new LearningPaths({
 
 
 
-const mario2 = new Student({
+const mario2 = new FreeStudent({
     name: 'Mario',
     age: 26,
     username: 'mariovelandiac',
@@ -133,7 +141,7 @@ const mario2 = new Student({
     ]
 });
 
-const ricardo = new Student({
+const ricardo = new BasicStudent({
     name: 'Ricardo',
     age: 8,
     username: 'ricardo23',
@@ -145,14 +153,33 @@ const ricardo = new Student({
     ]
 });
 
-const toShow = [
-  mario2.learningPaths[0].courses[0].name,
-  ricardo.learningPaths[0].courses[1].name
-]
+const sofia = new ExpertStudent({
+  name: 'Ricardo',
+  age: 8,
+  username: 'sofia21',
+  twitter: 'sofiaveloza',
+  instagram: 'sofiaveloza',
+  learningPaths: [
+      escuelaDS,
+      escuelaVdj
+  ]
+});
+
+const mario = new TeacherStudent({
+  name: 'Mario',
+  age: 26,
+  username: 'mariovelandiac',
+  twitter: 'mariovelandiac',
+  instagram: 'mariovelandiac',
+  email: 'noteloimaginas@gmail.com'
+});
+
+
 
 
 function main() {
-    introducción.pausar()
+  mario.publicarComentario('hola soy tu jefe')
+  mario2.publicarComentario('hola te quiero mucho');
 }
 
 export default main();

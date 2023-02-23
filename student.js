@@ -1,3 +1,4 @@
+import Comment from './comment.js'
 class Student {
     constructor ({
         name,
@@ -22,6 +23,15 @@ class Student {
         }
         this.approvedCourse = approvedCourse;
         this.learningPaths = learningPaths
+    }
+
+    publicarComentario(content) {
+      const commentInfo = {
+        content: content,
+        studentName: this.name,
+      }
+      const comment = new Comment(commentInfo)
+      comment.publicar()
     }
 };
 
