@@ -20,7 +20,7 @@ class TeacherStudent extends Student {
       studentRole: 'Profe'
     }
     const comment = new Comment(commentInfo)
-    comment.publicar(comment.studentRole)
+    comment.publicar()
   }
 }
 
